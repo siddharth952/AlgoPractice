@@ -14,7 +14,7 @@ class Solution:
         used = {}
         
         for i, c in enumerate(s):
-            if c in used and start <= used[c]:
+            if c in used and start <= used[c]: # start <= usedChar[s[i]] to make sure we don't worry that 'pwwp' we won't miss w and go straight to p by this
                 start = used[c] + 1
             else:
                 maxLength = max(maxLength, i-start +1)
